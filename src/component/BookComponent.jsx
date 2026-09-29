@@ -30,7 +30,7 @@ export default function BookComponent({ pages = [] }) {
       showPageCorners={true}
     >
       {pages.map((page, index) => {
-        // 🔹 Decide content based on type
+   
         let content = "";
         let extraClass = "";
 
