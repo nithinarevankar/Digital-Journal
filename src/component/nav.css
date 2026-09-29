@@ -1,0 +1,107 @@
+:root {
+  --bar-bg: #fff;
+  --bar-border: rgba(255, 255, 255, 0.9);
+  --bar-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.95);
+  --bar-shadow-hover: 0 16px 48px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.1);
+  --btn-hover-bg: rgba(0,0,0,0.06);
+  --btn-active-bg: rgba(0,0,0,0.10);
+  --accent: #1a1a1a;
+  --divider: rgba(0,0,0,0.08);
+  --tooltip-bg: rgba(20,20,20,0.88);
+}
+
+.pagination-container {
+  position: fixed;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  font-family: Arial, Helvetica;
+  font-size: medium;
+  animation: barRise 0.45s cubic-bezier(0.34,1.56,0.64,1) both;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 8px;
+  background: var(--bar-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--bar-border);
+  border-radius: 15px;
+  box-shadow: var(--bar-shadow);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+@keyframes barRise {
+  from { opacity:0; transform:translateX(-50%) translateY(20px) scale(0.94); }
+  to   { opacity:1; transform:translateX(-50%) translateY(0) scale(1); }
+
+}
+.pagination-container:hover {
+  box-shadow: var(--bar-shadow-hover);
+  transform: translateY(-1px);
+}
+
+
+.page-size select {
+  border: none;
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+
+.range-info {
+  margin: 0 20px;
+  color: #777;
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-count {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 15px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  user-select: none;
+  overflow: hidden;
+  
+}
+button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 10px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.2s ease;
+  
+}
+button:hover{
+  background: #dddddd;
+}
+.emo{
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
